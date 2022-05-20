@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pure-page</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- <style>
+        h1 {
+            color: red;
+        }
+    </style> -->
+    <!-- <script>
+        console.log('阻断html解析，并且需要完成前面的css解析')
+    </script> -->
+</head>
+
+<body>
+    <div>
+        <h1>页面加载过程</h1>
+        <h1>html可以边下载边解析</h1>
+        <h1>html解析与style解析是不是同步执行，先解析html再解析css</h1>
+        <!-- <script>
+            function longTask(duration) {
+                const current = new Date().getTime();
+                console.log('longTask-start', current);
+                while (current + duration > new Date().getTime()) { }
+                console.log('longTask-end', new Date().getTime());
+            }
+            longTask(1000)
+        </script> -->
+        <h1>css不阻断html解析</h1>
+        <!-- <script>
+            function longTask(duration) {
+                const current = new Date().getTime();
+                console.log('longTask-start', current);
+                while (current + duration > new Date().getTime()) { }
+                console.log('longTask-end', new Date().getTime());
+            }
+            longTask(1000)
+        </script> -->
+        <h1>JavaScript阻html解析</h1>
+    </div>
+</body>
+
+</html>

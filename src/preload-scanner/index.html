@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preload Scanner</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <script>
+        document.write('<script src="./document-write.js"><\/script>');
+    </script>
+    <script src="./async.js" async></script>
+    <script src="./defer.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <h1>Preload Scanner</h1>
+        <img src="../img/picture.png" alt="">
+        <iframe src="./child-page.html" frameborder="0"></iframe>
+    </div>
+    <script src="./index.js"></script>
+    <script>
+        const scriptDom = document.createElement('script');
+        scriptDom.src = './document-append.js'
+        document.body.append(scriptDom);
+    </script>
+</body>
+
+</html>
