@@ -1,0 +1,1 @@
+console.log('pure-index-js')
