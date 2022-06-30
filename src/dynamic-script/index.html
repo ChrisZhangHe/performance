@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <script>
+        window.onload = function () {
+            console.warn('onload')
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            console.warn('DOMContentLoaded');
+        });
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>async、defer、document.write、document.body.append加载脚本的差异</h1>
+    </div>
+    <!-- <script>
+        document.write('<script src="./document-write-default.js"><\/script>');
+        document.write('<script src="./document-write-defer.js" defer><\/script>');
+        document.write('<script src="./document-write-async.js" async><\/script>');
+    </script> -->
+    <!-- <script>
+        // default
+        let defaultScriptDom = document.createElement('script');
+        defaultScriptDom.src = './document-append-default.js';
+        document.body.appendChild(defaultScriptDom);
+        // defer
+        let deferScriptDomIsFalse = document.createElement('script');
+        deferScriptDomIsFalse.src = './document-append-defer-false.js';
+        deferScriptDomIsFalse.defer = false;
+        document.body.appendChild(deferScriptDomIsFalse);
+        let deferScriptDomIsTrue = document.createElement('script');
+        deferScriptDomIsTrue.src = './document-append-defer-true.js';
+        deferScriptDomIsTrue.defer = true;
+        document.body.appendChild(deferScriptDomIsTrue);
+        // async
+        let asyncScriptDomIsFalse = document.createElement('script');
+        asyncScriptDomIsFalse.src = './document-append-async-false.js';
+        asyncScriptDomIsFalse.async = false;
+        document.body.appendChild(asyncScriptDomIsFalse);
+        let asyncScriptDomIsTrue = document.createElement('script');
+        asyncScriptDomIsTrue.src = './document-append-async-true.js';
+        asyncScriptDomIsTrue.async = true;
+        document.body.appendChild(asyncScriptDomIsTrue);
+    </script> -->
+    <script src="./index.js"></script>
+    <script src="./async.js" async></script>
+    <script src="./defer.js" defer></script>
+</body>
+
+</html>

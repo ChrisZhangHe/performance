@@ -1,0 +1,1 @@
+console.log('document-append-async-true-js')

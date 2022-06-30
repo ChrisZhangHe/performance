@@ -1,0 +1,1 @@
+console.log('document-write-default-js')

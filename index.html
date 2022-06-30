@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=UTF-8>
+    <meta name=renderer content=webkit|ie-stand|ie-comp>
+    <title>cap4</title>
+    <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv=X-UA-Compatible content="IE=EDGE">
+    <style>
+        .calendar_iframe {
+            display: none !important;
+        }
+    </style>
+    <script>var version = '?_v=1652867334634';
+        var initCtxPath = '/seeyon';
+        var windowWorker;
+        if (typeof window.Worker === 'function') windowWorker = new Worker('./static/js/initRequest.js?V=V8_1SP1_220513_1402570');
+
+    </script>
+    <script src=../../../../../../../rest/cap4/form/headerJs></script>
+    <script src="/seeyon/common/form/api/csdk.js?V=V8_1SP1_220513_1402570"></script>
+    <script src="/seeyon/common/all-min.js?V=V8_1SP1_220513_1402570"></script>
+    <script src="./static/js/out-sniff.js?V=V8_1SP1_220513_1402570"></script>
+    <script>
+        function getParams() {
+            var result = {};
+            var searchStr = window.location.search;
+            var paramster = searchStr.split('?');
+
+            if (paramster.length > 1) {
+                var hrefStr = paramster[1];
+                var paramArr = hrefStr.split('&');
+
+                for (var i = 0; i < paramArr.length; i++) {
+                    var v = paramArr[i];
+                    result[v.split('=')[0]] = v.split('=')[1];
+                }
+            }
+
+            return result;
+        };
+        var urlParamsList = getParams();
+        var pluginscriptUrl = (urlParamsList.moduleId && urlParamsList.moduleType) ? _staticPath + '/rest/cap4/form/pluginScripts?page=form&v=cap4&client=pc&moduleId=' + urlParamsList.moduleId + '&moduleType=' + urlParamsList.moduleType : '';
+        document.write("<script src='" + pluginscriptUrl + "'><\/script>");
+    </script>
+    <script
+        src="/seeyon/common/cap4/template/display/pc/form/dist/static/js/initImplement.js?V=V8_1SP1_220513_1402570"></script>
+
+    <script>
+        console.log('send createOrEdit')
+        getFormDataFn();
+        requestType = false;
+    </script>
+    <script
+        src="/seeyon/common/cap4/template/display/pc/form/dist/static/js/vendor.js?V=V8_1SP1_220513_1402570"></script>
+    <script type=text/javascript src=static/js/app-widgets.js?b9532></script>
+</head>
+
+<body>
+    <i class="CAP cap-icon-zuojiantou" style="position:fixed;left:-10000px;color: rgb(47, 178, 102);"></i>
+    <i class="icon iconfont xls" style="position:fixed;left:-10000px;color: rgb(47, 178, 102);"></i>
+    <div id=form></div>
+    <script language=javascript event=OnReceiveMsg() for=PDF417Reader>window.openQCRscan(PDF417Reader);</script>
+    <script>function OnReceiveMsg() {
+            window.openQCRscan();
+        };</script>
+    <script
+        src="/seeyon/common/cap4/template/display/pc/form/dist/static/js/redirectApi.js?V=V8_1SP1_220513_1402570"></script>
+    <script type=text/javascript src=static/js/app.js?eea0b></script>
+    <script>
+        document.write('<script defer src="/seeyon/common/isignaturehtml/js/isignaturehtml.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/js/ui/calendar/calendar-language.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/apps_res/uc/rongcloud/chat.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/js/polyfill.min.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/cap4/template/display/pc/form/dist/static/js/barcode.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/wps_sdk.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/wps.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/wpsBaseOffice.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/kinggridBaseOffice.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/license.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/baseOffice.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/web-office-sdk-v1.1.9.umd.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/office/js/webOfficeBaseOffice.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/cap4/design/js/out-config.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/barCode/iWebBarcode.lic?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/cap4/common/i18n.js?V=V8_1SP1_220513_1402570"><\/script>')
+        document.write('<script defer src="/seeyon/common/cap4/template/base/browse-images/jquery.touchTouch-debug.js?V=V8_1SP1_220513_1402570"><\/script>')
+    </script>
+</body>
+
+</html>

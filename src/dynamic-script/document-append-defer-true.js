@@ -1,0 +1,1 @@
+console.log('document-append-defer-true-js')

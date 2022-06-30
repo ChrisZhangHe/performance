@@ -6,14 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parent Page</title>
-    <link rel="stylesheet" href="../css/base.css">
+    <!-- <link rel="stylesheet" href="../css/base.css"> -->
+    <script>
+        let iframeList = []
+        function handleAddIframe() {
+            let iframeDom = document.createElement('iframe');
+            iframeDom.src = './child-page.html'
+            document.body.appendChild(iframeDom);
+            iframeList.push(iframeDom);
+        }
+        function handleRemoveIframe() {
+            iframeList[0].parentNode.removeChild(iframeList[0]);
+            iframeList.shift();
+        }
+    </script>
 </head>
 
 <body>
     <div>
         <h1>Parent Page</h1>
+        <button onclick="handleAddIframe()">add-iframe</button>
+        <button onclick="handleRemoveIframe()">remove-frame</button>
     </div>
-    <iframe src="./child-page.html" frameborder="0"></iframe>
+    <!-- <iframe src="./child-page.html" frameborder="0"></iframe> -->
     <script src="./vendor.js"></script>
 </body>
 
