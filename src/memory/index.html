@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory</title>
+    <script>
+        window.aa = 1;
+        let bb = 2;
+        function fillData() {
+            aaaaaaaaa = 12344444// new Array(100000).fill(1);
+            bbbbbbbbb = 123123123123// new Array(20000).fill(1);
+        }
+    </script>
+    <script type="text/javascript">
+        var count = 0;		// How many 1MByte strings do we have in our possession?
+        var globalVar = [];	// The destination for storing the 1MByte string
+        function getRandomInt(min, max) { return Math.floor(Math.random() * Math.floor(max - min) + min); }
+        function id(name) { return document.getElementById(name); }
+        function calc() {
+            try {
+                let genBuffer = "";
+                for (i = 0; i < (1024 * 1024) / 16; i++) {
+                    genBuffer += getRandomInt(12345678, 99999999).toString();
+                }
+                globalVar[count] = genBuffer;	// Store a 1MByte string
+                count++;						// count up
+                id("addmemorysize").innerHTML = genBuffer.length * 2;
+                id("memorysize").innerHTML = (genBuffer.length * count * 2);
+                setTimeout(calc, 10);			// Recall in 1msec
+            } catch (e) {	 // Out-Of-Memory Check to see if the exception can be caught
+                console.error("name=" + e.name + ", message=" + e.message);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Memory</h1>
+    <button onclick="fillData()">fill-data</button>
+    <h1>Calc Memory Limit:</h1>
+    <div>
+        <input type="button" value="Start Calc" onclick="calc()"><br />
+        Buffer Unit Length: <span id="addmemorysize">0</span>Bytes / 10msec<br />
+        Used Buffer Length: <span id="memorysize">0</span>Bytes
+    </div>
+    <!-- <iframe src="./child.html" frameborder="0"></iframe> -->
+</body>
+
+</html>

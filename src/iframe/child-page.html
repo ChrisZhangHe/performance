@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Child Page</title>
     <link rel="stylesheet" href="../css/base.css">
+
 </head>
 
 <body>
@@ -15,7 +16,36 @@
             Child Page
         </h1>
     </div>
+    <div>
+        <!-- <input type="button" value="Start Calc" onclick="calc()"><br /> -->
+        Buffer Unit Length: <span id="addmemorysize">0</span>Bytes / 10msec<br />
+        Used Buffer Length: <span id="memorysize">0</span>Bytes
+    </div>
     <script src="./vendor.js"></script>
+    <script type="text/javascript">
+        (function () {
+            let count = 0;		// How many 1MByte strings do we have in our possession?
+            let globalVar = [];	// The destination for storing the 1MByte string
+            function getRandomInt(min, max) { return Math.floor(Math.random() * Math.floor(max - min) + min); }
+            function id(name) { return document.getElementById(name); }
+            function calc() {
+                try {
+                    let genBuffer = "";
+                    for (i = 0; i < (1024 * 1024 * 50) / 16; i++) {
+                        genBuffer += getRandomInt(12345678, 99999999).toString();
+                    }
+                    globalVar[count] = genBuffer;	// Store a 1MByte string
+                    count++;						// count up
+                    id("addmemorysize").innerHTML = genBuffer.length * 2;
+                    id("memorysize").innerHTML = (genBuffer.length * count * 2);
+                    // setTimeout(calc, 10);			// Recall in 1msec
+                } catch (e) {	 // Out-Of-Memory Check to see if the exception can be caught
+                    console.error("name=" + e.name + ", message=" + e.message);
+                }
+            }
+            calc()
+        })()
+    </script>
 </body>
 
 </html>

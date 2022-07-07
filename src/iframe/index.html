@@ -10,14 +10,31 @@
     <script>
         let iframeList = []
         function handleAddIframe() {
+            const id = 'iframe' + Math.random() * 1000;
             let iframeDom = document.createElement('iframe');
-            iframeDom.src = './child-page.html'
+            iframeDom.src = './child-page.html';
+            iframeDom.id = id
             document.body.appendChild(iframeDom);
-            iframeList.push(iframeDom);
+            iframeList.push(id);
         }
         function handleRemoveIframe() {
-            iframeList[0].parentNode.removeChild(iframeList[0]);
-            iframeList.shift();
+            const id = iframeList.pop();
+            let iframe = document.getElementById(id);
+            iframe.src = 'about:blank';
+            try {
+                iframe.contentWindow.document.write('');
+                iframe.contentWindow.document.clear();
+                iframe.contentWindow.document.close();
+            } catch (e) { }
+            iframe.parentNode.removeChild(iframe);
+            iframe = null;
+            setTimeout(function () {
+                if (CollectGarbage) CollectGarbage();
+            }, 2000);
+        }
+        function handleOpenIframe() {
+            let iframe = window.open('./child-page.html?num=' + Math.random(), 'newwindow' + Math.random(), 'height=700,width=1000,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+            iframe = null;
         }
     </script>
 </head>
@@ -25,11 +42,13 @@
 <body>
     <div>
         <h1>Parent Page</h1>
+        <input type="text">
         <button onclick="handleAddIframe()">add-iframe</button>
         <button onclick="handleRemoveIframe()">remove-frame</button>
+        <button onclick="handleOpenIframe()">open-iframe</button>
     </div>
-    <!-- <iframe src="./child-page.html" frameborder="0"></iframe> -->
-    <script src="./vendor.js"></script>
+    <!-- <iframe src="http://localhost:8080/iframe/child-page.html" frameborder="0"></iframe> -->
+    <!-- <script src="./vendor.js"></script> -->
 </body>
 
 </html>
