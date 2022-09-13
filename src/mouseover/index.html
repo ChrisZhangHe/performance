@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let lastTime = new Date().getTime();
+        function handleMouseover() {
+            let now = new Date().getTime();
+            console.log(now - lastTime)
+            lastTime = now;
+        }
+    </script>
+</head>
+
+<body>
+    <div onmousemove="handleMouseover()" style="width: 500px;height: 500px;border: 1px solid;">
+
+    </div>
+</body>
+
+</html>

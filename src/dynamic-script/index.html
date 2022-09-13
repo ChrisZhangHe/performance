@@ -22,12 +22,12 @@
     <div>
         <h1>async、defer、document.write、document.body.append加载脚本的差异</h1>
     </div>
-    <!-- <script>
+    <script>
         document.write('<script src="./document-write-default.js"><\/script>');
         document.write('<script src="./document-write-defer.js" defer><\/script>');
         document.write('<script src="./document-write-async.js" async><\/script>');
-    </script> -->
-    <!-- <script>
+    </script>
+    <script>
         // default
         let defaultScriptDom = document.createElement('script');
         defaultScriptDom.src = './document-append-default.js';
@@ -50,7 +50,7 @@
         asyncScriptDomIsTrue.src = './document-append-async-true.js';
         asyncScriptDomIsTrue.async = true;
         document.body.appendChild(asyncScriptDomIsTrue);
-    </script> -->
+    </script>
     <script src="./index.js"></script>
     <script src="./async.js" async></script>
     <script src="./defer.js" defer></script>

@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/base.css">
+    <script>
+        window.addEventListener('load', function () {
+            console.log('load')
+        })
+        window.addEventListener('beforeunload', function (event) {
+            event.returnValue = '';
+            // Cancel the event as stated by the standard.
+           // event.preventDefault();
+            // Chrome requires returnValue to be set.
+            // event.returnValue = '';
+        });
+        window.addEventListener('unload', function () {
+            console.log('unload')
+        })
+    </script>
 </head>
 
 <body>
@@ -16,10 +31,10 @@
         </h1>
         <button onclick="onDynamicLoadJs()">dynamic-load-js</button>
     </div>
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script>
     <script>
         sleep(1000)
-    </script>
+    </script> -->
 </body>
 
 </html>
