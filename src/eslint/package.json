@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development ",
     "prepare": "husky install",
-    "eslint-demo":"prettier --write index.js"
+    "eslint-demo":"eslint --fix index.js"
   },
   "author": "",
   "license": "ISC",

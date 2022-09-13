@@ -12,6 +12,6 @@ printUser(
   "Madison",
   "United States of America"
 );
-var a = 1;
+var a=1;
 var b=2;
 console.log(a, b);
