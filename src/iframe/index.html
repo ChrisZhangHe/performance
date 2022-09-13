@@ -1,54 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Page</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe</title>
     <!-- <link rel="stylesheet" href="../css/base.css"> -->
     <script>
-        let iframeList = []
-        function handleAddIframe() {
-            const id = 'iframe' + Math.random() * 1000;
-            let iframeDom = document.createElement('iframe');
-            iframeDom.src = './child-page.html';
-            iframeDom.id = id
-            document.body.appendChild(iframeDom);
-            iframeList.push(id);
-        }
-        function handleRemoveIframe() {
-            const id = iframeList.pop();
-            let iframe = document.getElementById(id);
-            iframe.src = 'about:blank';
-            try {
-                iframe.contentWindow.document.write('');
-                iframe.contentWindow.document.clear();
-                iframe.contentWindow.document.close();
-            } catch (e) { }
-            iframe.parentNode.removeChild(iframe);
-            iframe = null;
-            setTimeout(function () {
-                if (CollectGarbage) CollectGarbage();
-            }, 2000);
-        }
-        function handleOpenIframe() {
-            let iframe = window.open('./child-page.html?num=' + Math.random(), 'newwindow' + Math.random(), 'height=700,width=1000,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
-            iframe = null;
-        }
+      let iframeList = [];
+      function handleAddIframe(url) {
+        let iframeDom = document.createElement('iframe');
+        iframeDom.src = url; // 'https://www.bing.com/'//'./child-page.html'
+        document.body.appendChild(iframeDom);
+        iframeList.push(iframeDom);
+      }
+      function handleRemoveIframe() {
+        iframeList[0].parentNode.removeChild(iframeList[0]);
+        iframeList.shift();
+      }
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>
-        <h1>Parent Page</h1>
-        <input type="text">
-        <button onclick="handleAddIframe()">add-iframe</button>
-        <button onclick="handleRemoveIframe()">remove-frame</button>
-        <button onclick="handleOpenIframe()">open-iframe</button>
+      <h1>Parent Page</h1>
+      <button onclick="handleAddIframe('http:\/\/127.0.0.1:8080/iframe/child-page.html')">
+        add-local-iframe
+      </button>
+      <button onclick='handleAddIframe("https:\/\/www.bing.com/")'>
+        add-other-iframe
+      </button>
+      <button onclick="handleRemoveIframe()">remove-frame</button>
     </div>
-    <!-- <iframe src="http://localhost:8080/iframe/child-page.html" frameborder="0"></iframe> -->
-    <!-- <script src="./vendor.js"></script> -->
-</body>
-
+    <!-- <iframe src="./child-page.html" frameborder="0"></iframe> -->
+    <script src="./vendor.js"></script>
+  </body>
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Script</title>
     <link rel="stylesheet" href="../css/base.css">
     <script>
         window.onload = function () {
@@ -27,7 +27,7 @@
         document.write('<script src="./document-write-defer.js" defer><\/script>');
         document.write('<script src="./document-write-async.js" async><\/script>');
     </script>
-    <script>
+    <!-- <script>
         // default
         let defaultScriptDom = document.createElement('script');
         defaultScriptDom.src = './document-append-default.js';
@@ -50,10 +50,10 @@
         asyncScriptDomIsTrue.src = './document-append-async-true.js';
         asyncScriptDomIsTrue.async = true;
         document.body.appendChild(asyncScriptDomIsTrue);
-    </script>
-    <script src="./index.js"></script>
-    <script src="./async.js" async></script>
+    </script> -->
+    <!-- <script src="./index.js"></script>
     <script src="./defer.js" defer></script>
+    <script src="./async.js" async></script> -->
 </body>
 
 </html>

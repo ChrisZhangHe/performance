@@ -5,13 +5,19 @@ function handleClick() {
   //   setTimeout(() => {
   //     console.log(2);
   //   }, 3000);
+
+  requestIdleCallback(function () {
+    console.log('idleCallback');
+  });
   setTimeout(() => {
     console.log(1);
   });
   setTimeout(() => {
     console.log(2);
   });
-
+  requestAnimationFrame(function () {
+    console.log('animation');
+  });
   new Promise((res) => {
     console.log(3);
     res();
@@ -36,7 +42,7 @@ function handleClick() {
 function request(reqListener, isAsync) {
   var oReq = new XMLHttpRequest();
   oReq.addEventListener('load', reqListener);
-  oReq.open('GET', 'http://10.1.207.42:8080/event-loop/index.js', isAsync);
+  oReq.open('GET', 'http://127.0.0.1:8080/event-loop/index.js', isAsync);
   oReq.send();
 }
 
