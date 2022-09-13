@@ -12,5 +12,6 @@ printUser(
   "Madison",
   "United States of America"
 );
-var a=1;
-console.log(a);
+var a = 1;
+var b=2;
+console.log(a,b);
