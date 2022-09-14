@@ -14,7 +14,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.{js,jsx}": "eslint --ext .js,.jsx"
+    "*.{js,jsx}": "eslint --ext .js,.jsx --cache"
   },
   "author": "",
   "license": "ISC",
