@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development ",
     "prepare": "husky install",
-    "eslint-demo":"eslint --fix index.js"
+    "eslint-demo": "eslint --fix index.js"
+  },
+  "lint-staged":{
+    "index.js":["eslint --fix"]
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +22,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^3.2.0",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
   }
 }
