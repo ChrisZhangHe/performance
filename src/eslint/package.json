@@ -10,7 +10,7 @@
     "eslint-demo": "eslint --fix index.js"
   },
   "lint-staged": {
-    "**/*.{js,jsx,css,less,json,md}": [
+    "src/index.js": [
       "prettier --write",
       "git add"
     ],
