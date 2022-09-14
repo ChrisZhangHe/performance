@@ -9,8 +9,12 @@
     "prepare": "husky install",
     "eslint-demo": "eslint --fix index.js"
   },
-  "lint-staged":{
-    "index.js":["eslint --fix"]
+  "lint-staged": {
+    "*.{js,jsx,css,less,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": "eslint --ext .js,.jsx"
   },
   "author": "",
   "license": "ISC",
