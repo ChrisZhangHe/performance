@@ -19,3 +19,5 @@ var d = 4;
 var e = 5;
 console.log(a, b, c, d, e, dd);
 var dd = 5;
+var test;
+console.log(test);
