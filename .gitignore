@@ -1,5 +1,5 @@
 src/babel/node_modules/
-src/eslint/node_modules/
+src/webpack/node_modules/
 src/prettier/node_modules/
 src/babel/ie-lib/util.js
 src/babel/ie-lib/index.js
