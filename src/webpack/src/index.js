@@ -15,5 +15,5 @@ var h2 = document.createElement("h2");
 h2.innerText = "h2";
 document.body.appendChild(h2);
 var h3 = document.createElement("h3");
-h3.innerText = "h3";
+// h3.innerText = "h3";
 document.body.appendChild(h3);
