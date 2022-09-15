@@ -7,4 +7,5 @@ module.exports = {
   // jsxBracketSameLine: true,
   // jsxSingleQuote: true,
   // arrowParens: 'always',
+  endOfLine: "auto",
 };

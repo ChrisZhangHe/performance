@@ -9,12 +9,22 @@ module.exports = {
     filename: "index_bundle.js",
   },
   mode: "development", // process.env.NODE_ENV,
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   plugins: [
     // html打包插件
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new ESLintPlugin({}),
+    new ESLintPlugin({
+      lintDirtyModulesOnly: true,
+    }),
   ],
   devServer: {
     static: {

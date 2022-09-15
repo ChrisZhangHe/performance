@@ -4,18 +4,19 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "serve": "webpack-dev-server --config webpack.config.js",
+    "serve": "webpack-dev-server --config webpack.config.js && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development",
     "prepare": "cd ../.. && husky install ./src/webpack/.husky",
-    "commit": "git add . && git-cz && git pull && git push"
+    "commit": "git add . && git-cz && git pull && git push",
+    "lint": "prettier --write ./src && eslint ./src --ext .js,.jsx --cache --fix"
   },
   "lint-staged": {
     "*.{js,jsx,css,less,json,md}": [
       "prettier --write",
       "git add"
     ],
-    "*.{js,jsx}": "eslint --ext .js,.jsx --cache"
+    "*.{js,jsx}": "eslint --ext .js,.jsx --cache --fix"
   },
   "config": {
     "commitizen": {
@@ -32,6 +33,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@commitlint/cz-commitlint": "^17.1.2",
     "commitizen": "^4.2.5",
+    "css-loader": "^6.7.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
@@ -40,6 +42,7 @@
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.0"
