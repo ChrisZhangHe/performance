@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "serve": "webpack-dev-server --config webpack.config.js && npm run lint",
+    "serve": "webpack-dev-server --mode development && npm run lint",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development",
     "prepare": "cd ../.. && husky install ./src/webpack/.husky",
     "commit": "git add . && git-cz && git pull && git push",
     "lint": "prettier --write ./src && eslint ./src --ext .js,.jsx --cache --fix"
@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^8.11.0",
     "prettier": "^2.7.1"
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0"
+    "webpack-dev-server": "^4.11.0",
+    "webpack-merge": "^5.8.0"
   }
 }

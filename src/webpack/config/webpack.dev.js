@@ -1,32 +1,12 @@
+const commonConfig = require("./webpack.common");
+const { merge } = require("webpack-merge");
 const path = require("path");
 const ESLintPlugin = require("eslint-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-  entry: { index: "./src/index.js" },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "./dist"),
-  },
+module.exports = merge(commonConfig, {
   mode: "development", // process.env.NODE_ENV,
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-    ],
-  },
+  devtool: "source-map",
   plugins: [
-    // html打包插件
-    new HtmlWebpackPlugin({
-      title: "webpack",
-      template: "./public/index.html",
-    }),
     new ESLintPlugin({
       lintDirtyModulesOnly: true,
     }),
@@ -49,5 +29,4 @@ module.exports = {
     //   writeToDisk: true,
     // },
   },
-  target: "web", // 目标是浏览器
-};
+});
