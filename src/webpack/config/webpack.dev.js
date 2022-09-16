@@ -3,10 +3,10 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: { index: "./src/index.js" },
   output: {
+    filename: "[name].js",
     path: path.resolve(__dirname, "./dist"),
-    filename: "index_bundle.js",
   },
   mode: "development", // process.env.NODE_ENV,
   module: {
@@ -15,11 +15,16 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
     // html打包插件
     new HtmlWebpackPlugin({
+      title: "webpack",
       template: "./public/index.html",
     }),
     new ESLintPlugin({
