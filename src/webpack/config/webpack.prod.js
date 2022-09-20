@@ -8,6 +8,7 @@ module.exports = merge(commonConfig, {
     clean: true,
   },
   // devtool: "source-map",
+  cache: true,
   plugins: [new ESLintPlugin({})],
   target: "web", // 目标是浏览器
 });
