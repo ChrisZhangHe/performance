@@ -4,6 +4,7 @@ const path = require("path");
 const UnusedWebpackPlugin = require("unused-webpack-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = merge(prodConfig, {
   plugins: [
@@ -12,5 +13,6 @@ module.exports = merge(prodConfig, {
       root: path.join(__dirname, "../../"),
     }),
     new BundleAnalyzerPlugin(),
+    new DashboardPlugin(),
   ],
 });

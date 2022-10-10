@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=dev webpack-dev-server  && npm run lint",
     "build": "cross-env NODE_ENV=build webpack ",
-    "build:analysis": "cross-env NODE_ENV=build_analysis webpack",
+    "build:analysis": "cross-env NODE_ENV=build_analysis webpack-dashboard --  webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "cd ../.. && husky install ./src/webpack/.husky",
     "commit": "git add . && git-cz && git pull && git push",
@@ -50,6 +50,7 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
+    "webpack-dashboard": "^3.3.7",
     "webpack-dev-server": "^4.11.0",
     "webpack-merge": "^5.8.0"
   }
