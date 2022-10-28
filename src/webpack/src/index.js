@@ -12,6 +12,7 @@
 // document.body.appendChild(img);
 // creatElement("h1");
 import { fn1 } from "./util";
+import "npm-demo-jjwifwif";
 // import _ from "lodash";
 // _.join(["a", "b", "ccda"], "~");
 fn1();

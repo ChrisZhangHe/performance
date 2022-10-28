@@ -27,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^8.11.0",
+    "npm-demo-jjwifwif": "latest",
     "prettier": "^2.7.1"
   },
   "devDependencies": {
